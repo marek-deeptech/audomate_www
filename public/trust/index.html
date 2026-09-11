@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- STAGING: page is intentionally unlinked. Remove noindex at launch. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Trust Center — Audomate</title>
+<meta name="description" content="How Audomate secures, processes and retains your compliance data. EEA-hosted, zero-retention AI, GDPR and DORA vendor documentation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ffffff; --wash:#f5f7f6; --ink:#101820; --muted:#57606a;
+  --green:#00a868; --green-ink:#00794c; --amber:#a06a12; --line:#e2e7e6;
+  --mono:'IBM Plex Mono',ui-monospace,monospace; --sans:'IBM Plex Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-size:16.5px}
+a{color:var(--green-ink);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+header.site{border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:baseline;justify-content:space-between;padding-top:18px;padding-bottom:18px}
+.wordmark{font-weight:600;font-size:20px;letter-spacing:-.02em;color:var(--ink)}
+.wordmark span{color:var(--green)}
+.pagetag{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.hero{padding:72px 0 40px}
+.eyebrow{font-family:var(--mono);font-size:13.5px;color:var(--green-ink);margin-bottom:14px}
+h1{font-size:clamp(30px,5vw,44px);line-height:1.12;letter-spacing:-.025em;font-weight:600;max-width:17ch}
+.hero p.lede{margin-top:20px;max-width:62ch;color:var(--muted);font-size:18px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chip{font-family:var(--mono);font-size:13px;border:1px solid var(--line);border-radius:100px;padding:7px 14px;background:var(--wash)}
+.chip b{color:var(--green-ink);font-weight:500}
+.toc{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--wash)}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:4px 22px;padding-top:14px;padding-bottom:14px}
+.toc a{font-family:var(--mono);font-size:13px;color:var(--muted);white-space:nowrap}
+.toc a:hover{color:var(--ink);text-decoration:none}
+section.block{padding:56px 0;border-bottom:1px solid var(--line)}
+section.block:nth-of-type(even){background:var(--wash)}
+.secno{font-family:var(--mono);font-size:13px;color:var(--green-ink);margin-bottom:10px}
+h2{font-size:clamp(22px,3.2vw,29px);line-height:1.2;letter-spacing:-.02em;font-weight:600;max-width:26ch}
+.block>.wrap>p{margin-top:16px;max-width:66ch;color:var(--muted)}
+.block ul{margin:18px 0 0 0;padding:0;list-style:none;max-width:70ch}
+.block ul li{padding:9px 0 9px 26px;position:relative;border-top:1px solid var(--line)}
+.block ul li:first-child{border-top:0}
+.block ul li::before{content:"";position:absolute;left:2px;top:17px;width:7px;height:7px;border-radius:50%;background:var(--green)}
+table{width:100%;border-collapse:collapse;margin-top:22px;font-size:14.5px}
+caption{text-align:left;font-family:var(--mono);font-size:12.5px;color:var(--muted);padding-bottom:10px}
+th{font-family:var(--mono);font-size:12px;font-weight:500;text-transform:none;color:var(--muted);text-align:left;padding:8px 14px 8px 0;border-bottom:1px solid var(--ink)}
+td{padding:10px 14px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td.mono,.mono{font-family:var(--mono);font-size:13.5px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:1px}
+.dot.ok{background:var(--green)} .dot.plan{background:var(--amber)} .dot.no{background:#c33}
+mark.todo{background:#fff3d6;color:var(--amber);font-family:var(--mono);font-size:.85em;padding:1px 5px;border-radius:3px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:26px}
+.fact{background:var(--paper);padding:18px}
+.fact .v{font-family:var(--mono);font-size:22px;color:var(--ink)}
+.fact .k{font-size:13.5px;color:var(--muted);margin-top:4px}
+.docgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px;margin-top:26px}
+.doc{border:1px solid var(--line);background:var(--paper);padding:18px;display:flex;flex-direction:column;gap:8px}
+.doc h3{font-size:16px;font-weight:600;letter-spacing:-.01em}
+.doc p{font-size:14px;color:var(--muted);flex:1}
+.badge{font-family:var(--mono);font-size:12px;align-self:flex-start;border-radius:100px;padding:3px 10px}
+.badge.ok{background:#e2f6ec;color:var(--green-ink)}
+.badge.prep{background:#fdf2dc;color:var(--amber)}
+.badge.req{background:#eef1f0;color:var(--muted)}
+.doc a.get{font-family:var(--mono);font-size:13.5px}
+.cta{padding:64px 0}
+.cta .card{border:1px solid var(--ink);padding:34px;background:var(--paper)}
+.cta h2{max-width:none}
+.btn{display:inline-block;margin-top:18px;background:var(--green);color:#fff;font-weight:600;padding:12px 22px;border-radius:8px}
+.btn:hover{background:var(--green-ink);text-decoration:none}
+footer{padding:40px 0 64px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between}
+footer .mono{font-size:12.5px}
+@media (max-width:640px){ body{font-size:15.5px} section.block{padding:44px 0} }
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="wordmark" href="https://audomate.eu">audomate<span>*</span></a>
+    <span class="pagetag">Trust Center</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Trust Center · security, privacy &amp; DORA vendor documentation</p>
+    <h1>We automate compliance for a living. Here is ours.</h1>
+    <p class="lede">Audomate reads your contracts, policies and evidence — so before you send us a single document, you deserve plain answers: where your data is processed, what our AI does with it, what we keep, and what happens when something fails. This page answers those questions in full, including the certifications we do not hold yet.</p>
+    <div class="chips">
+      <span class="chip"><b>EEA-only</b> processing &amp; storage</span>
+      <span class="chip"><b>Zero-retention</b> LLM inference</span>
+      <span class="chip"><b>No training</b> on client data, ever</span>
+      <span class="chip"><b>On-premise</b> deployment available</span>
+    </div>
+  </div>
+</div>
+
+<nav class="toc" aria-label="On this page">
+  <div class="wrap">
+    <a href="#residency">01 Residency</a><a href="#data">02 Data handling</a><a href="#ai">03 AI governance</a>
+    <a href="#security">04 Security</a><a href="#subprocessors">05 Subprocessors</a><a href="#gdpr">06 GDPR</a>
+    <a href="#dora">07 For DORA clients</a><a href="#certs">08 Certifications</a><a href="#documents">09 Documents</a><a href="#assessment">10 Assessments</a>
+  </div>
+</nav>
+
+<section class="block" id="residency">
+  <div class="wrap">
+    <p class="secno">01 Infrastructure &amp; data residency</p>
+    <h2>Everything runs in the EEA, including backups.</h2>
+    <p>The platform is hosted on Google Cloud in EU regions, with the frontend served from EEA edge locations. A request never leaves the European Economic Area — not for compute, not for storage, not for AI inference, not for disaster recovery.</p>
+    <table>
+      <caption>Processing and storage regions</caption>
+      <tr><th>Region</th><th>Location</th><th>Role</th><th>Status</th></tr>
+      <tr><td class="mono">europe-west1</td><td>Belgium</td><td>Primary compute &amp; database</td><td><span class="dot ok"></span>Active</td></tr>
+      <tr><td class="mono">europe-west3</td><td>Frankfurt, Germany</td><td>Disaster recovery</td><td><span class="dot ok"></span>Active</td></tr>
+      <tr><td class="mono">europe-west4</td><td>Netherlands</td><td>Object-storage redundancy</td><td><span class="dot ok"></span>Active</td></tr>
+      <tr><td class="mono">non-EEA</td><td>Any</td><td>Processing or storage</td><td><span class="dot no"></span>None</td></tr>
+    </table>
+    <div class="facts">
+      <div class="fact"><div class="v">99.9–99.95%</div><div class="k">Availability, by plan tier</div></div>
+      <div class="fact"><div class="v">&lt; 30 s</div><div class="k">Automatic database failover</div></div>
+      <div class="fact"><div class="v">1–4 h</div><div class="k">Recovery point objective (RPO)</div></div>
+      <div class="fact"><div class="v">4–8 h</div><div class="k">Recovery time objective (RTO)</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="data">
+  <div class="wrap">
+    <p class="secno">02 Data handling &amp; retention</p>
+    <h2>Your documents stay yours — and stay deletable.</h2>
+    <p>Client documents are encrypted in transit (TLS 1.3, TLS 1.2 floor) and at rest (AES-256, customer-managed keys via Cloud KMS, rotated every 90 days). Tenants are isolated at two independent layers — application RBAC and database row-level security — so cross-tenant access is structurally impossible, not merely forbidden.</p>
+    <table>
+      <caption>Data classes and retention</caption>
+      <tr><th>Class</th><th>Where processed</th><th>Retention</th></tr>
+      <tr><td>Uploaded documents (PDF/DOCX)</td><td>EEA object storage + vector index</td><td>Until your deletion request — then hard-deleted</td></tr>
+      <tr><td>Personal data in documents</td><td>EEA relational database</td><td>GDPR art. 5 — no longer than necessary</td></tr>
+      <tr><td>AI session context</td><td>Memory only, per session</td><td>Cleared on session end — never persisted</td></tr>
+      <tr><td>Compliance reports</td><td>EEA storage, versioned</td><td>Per your organisation's policy</td></tr>
+      <tr><td>Audit trail</td><td>Hash-chained, tamper-evident log</td><td>Min. 1 year (DORA art. 25) or longer per contract</td></tr>
+    </table>
+    <ul>
+      <li>Right to erasure is engineering, not a promise: a purge pipeline removes vector, relational and object-storage records in one operation.</li>
+      <li>Backups are point-in-time-recoverable and stored dual-region — inside the EEA.</li>
+      <li>Every user action, AI verdict and human override is written to an append-only, hash-chained audit log.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="ai">
+  <div class="wrap">
+    <p class="secno">03 AI &amp; model governance</p>
+    <h2>No AI verdict is final without a human.</h2>
+    <p>Audomate's analytical engine is retrieval-augmented generation: every answer is grounded in retrieved fragments of your own documents and the regulation itself, returned with citations and a confidence score. A compliance officer reviews, edits or overrides every verdict — with author, timestamp and reason recorded. The AI proposes; your team decides.</p>
+    <ul>
+      <li>LLM inference runs on enterprise EEA endpoints under a contractual zero-data-retention policy — prompts and completions are not stored by the model provider and are never used for training, ours or theirs.</li>
+      <li>Each tenant's audit session is fully isolated; context is held in memory for the session and discarded at its end.</li>
+      <li>Prompt-injection detection and input sanitisation run at the gateway, before any content reaches a model.</li>
+      <li>Token budgets are enforced per tenant with utilisation alerts — no runaway processing.</li>
+      <li>Organisations requiring complete independence from third-party model providers can run Audomate with an on-premise model stack (Enterprise plan).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="security">
+  <div class="wrap">
+    <p class="secno">04 Organisational &amp; platform security</p>
+    <h2>Boring, layered, verifiable.</h2>
+    <ul>
+      <li><b>Network</b> — WAF with OWASP Top-10 protection and adaptive DDoS mitigation in front of the API; mTLS between internal services; data layer on private networking with no public IPs.</li>
+      <li><b>Identity</b> — SSO via SAML 2.0 / OIDC with your identity provider (e.g. Microsoft Entra ID); MFA mandatory; 15-minute access-token TTL with refresh rotation.</li>
+      <li><b>Access</b> — role-based access at application level, enforced a second time by database row-level security; secrets in a managed vault with access audit and 90-day rotation.</li>
+      <li><b>People</b> — the platform is built by a team whose experts advise the EU Commission on Digital Identity Wallets, sit on CEN and PKN standardisation committees, and consult the Polish Bank Association on AML, eIDAS and PSD.</li>
+      <li><b>Development</b> — <mark class="todo">TO CONFIRM: code review policy, dependency scanning, release testing practice — one sentence each from engineering</mark>.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="subprocessors">
+  <div class="wrap">
+    <p class="secno">05 Subprocessors</p>
+    <h2>A short list, published, with notice before it changes.</h2>
+    <p>These are the parties that support the Audomate platform itself. All process data exclusively in EEA regions. We give <mark class="todo">30 days'</mark> notice before a subprocessor is added or replaced, with an objection window defined in the DPA.</p>
+    <table>
+      <tr><th>Subprocessor</th><th>Purpose</th><th>Region</th><th>Data reached</th></tr>
+      <tr><td>Google Cloud (Google Ireland Ltd)</td><td>Compute, storage, database, key management</td><td class="mono">EEA (BE/DE/NL)</td><td>Encrypted client content</td></tr>
+      <tr><td>Microsoft Azure OpenAI Service</td><td>LLM inference, EEA endpoint, zero retention</td><td class="mono">EEA</td><td>Prompt content, transient only</td></tr>
+      <tr><td>Okta (Auth0), EU region</td><td>Identity &amp; single sign-on</td><td class="mono">EEA</td><td>Names, emails, authentication logs</td></tr>
+      <tr><td>Vercel</td><td>Frontend delivery, EEA edge locations</td><td class="mono">EEA PoPs</td><td>Transit only</td></tr>
+      <tr><td><mark class="todo">TO CONFIRM: alerting / billing / support tooling</mark></td><td>—</td><td class="mono">—</td><td>—</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="gdpr">
+  <div class="wrap">
+    <p class="secno">06 GDPR / RODO</p>
+    <h2>Processor by contract, minimalist by design.</h2>
+    <ul>
+      <li>For client documents, your organisation is the data controller and DeepTech Sp. z o.o. is the processor. A Data Processing Agreement with technical-and-organisational-measures and subprocessor annexes is signed as part of every deployment.</li>
+      <li>No personal data is transferred outside the EEA, so no SCCs or adequacy mechanisms are relied on for platform operation.</li>
+      <li>Personal-data breaches are notified to affected clients without undue delay, and to the supervisory authority within 72 hours where required by art. 33 GDPR.</li>
+      <li>Data-subject rights — access, rectification, erasure, restriction — are supported in the platform, including hard deletion across all storage layers.</li>
+      <li>A record of processing activities (ROPA) is maintained internally and available for review under NDA.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="dora">
+  <div class="wrap">
+    <p class="secno">07 For DORA-regulated clients</p>
+    <h2>Built to be your ICT third-party provider — on paper, not just in the pitch.</h2>
+    <p>If DORA applies to you, we are an ICT third-party service provider in your register — so we prepared the answers your vendor due diligence will ask for. The full pack is available on request and includes everything below in Register-of-Information-ready form.</p>
+    <table>
+      <caption>Provider identification — for your Register of Information</caption>
+      <tr><th>Field</th><th>Value</th></tr>
+      <tr><td>Legal name</td><td>DeepTech Sp. z o.o.</td></tr>
+      <tr><td>Registered address</td><td>ul. Chmielna 132/134, 00-805 Warsaw, Poland</td></tr>
+      <tr><td>Identifiers</td><td class="mono">KRS <mark class="todo">TO CONFIRM</mark> · NIP <mark class="todo">TO CONFIRM</mark> · LEI <mark class="todo">TO CONFIRM / obtain</mark></td></tr>
+      <tr><td>Service type</td><td>SaaS software supporting ICT vendor governance, compliance auditing and monitoring</td></tr>
+      <tr><td>Data locations</td><td class="mono">europe-west1 (BE) primary · europe-west3 (DE) DR · europe-west4 (NL) storage</td></tr>
+      <tr><td>Subcontracting chain</td><td>See section 05 — published subprocessor list</td></tr>
+    </table>
+    <ul>
+      <li><b>Incident notification</b> — critical incidents affecting your tenant are notified to your named contacts within <mark class="todo">30 minutes (Enterprise) / TO CONFIRM standard tier</mark>, with a written report within 24 hours.</li>
+      <li><b>Audit &amp; access rights</b> — contractual audit, information and access rights for you and your competent authorities, consistent with DORA art. 30(3).</li>
+      <li><b>Exit strategy</b> — full export of your data in open formats (PDF, DOCX, CSV, JSON), verified hard deletion, and transition assistance for <mark class="todo">TO CONFIRM</mark> days after termination.</li>
+      <li><b>Continuity</b> — dual-region architecture, automatic failover, documented RTO/RPO per plan tier (section 01), business-continuity summary in the document library.</li>
+    </ul>
+    <a class="btn" href="mailto:sales@deeptech.pl?subject=DORA%20vendor%20pack%20request">Request the DORA vendor pack</a>
+  </div>
+</section>
+
+<section class="block" id="certs">
+  <div class="wrap">
+    <p class="secno">08 Certifications &amp; roadmap</p>
+    <h2>What we hold, what our cloud holds, and what we don't have yet.</h2>
+    <p>We think a trust page earns its name by being precise about this distinction. Our infrastructure layer carries Google Cloud's certifications; DeepTech's own certifications are in progress. When a report exists, it will be published here.</p>
+    <table>
+      <tr><th>Assurance</th><th>Holder</th><th>Status</th></tr>
+      <tr><td>ISO 27001, SOC 2, CSA STAR — hosting layer</td><td>Google Cloud</td><td><span class="dot ok"></span>Certified (inherited controls)</td></tr>
+      <tr><td>GDPR DPA with TOMs</td><td>DeepTech</td><td><span class="dot ok"></span>Signed per deployment</td></tr>
+      <tr><td>ISO 27001 — DeepTech organisation</td><td>DeepTech</td><td><span class="dot plan"></span>In preparation — target <mark class="todo">TO CONFIRM</mark></td></tr>
+      <tr><td>Independent penetration test</td><td>DeepTech</td><td><span class="dot plan"></span>Planned — <mark class="todo">TO CONFIRM date/vendor</mark>; summary will be published</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="documents">
+  <div class="wrap">
+    <p class="secno">09 Document library</p>
+    <h2>The documents your review will ask for.</h2>
+    <p>Public documents download directly. Deployment documents are shared on request — tell us who you are and what your review needs.</p>
+    <!-- STATUS BADGES: flip .prep → .ok and add the PDF link as each document clears internal review. PDFs live in /trust/docs/ -->
+    <div class="docgrid">
+      <div class="doc"><span class="badge prep">In review</span><h3>Privacy Policy</h3><p>What we collect on this website and in the platform, why, and for how long.</p><a class="get" href="/trust/docs/audomate-privacy-policy.pdf">Download</a></div>
+      <div class="doc"><span class="badge prep">In review</span><h3>Terms of Service</h3><p>The binding contract for using Audomate.</p><a class="get" href="/trust/docs/audomate-terms.pdf">Download</a></div>
+      <div class="doc"><span class="badge prep">In review</span><h3>Subprocessor List</h3><p>The published list referenced by the DPA, with change-notice terms.</p><a class="get" href="/trust/docs/audomate-subprocessors.pdf">Download</a></div>
+      <div class="doc"><span class="badge prep">In review</span><h3>Information Security Overview</h3><p>Network, identity, encryption, monitoring and incident practice — the public summary.</p><a class="get" href="/trust/docs/audomate-security-overview.pdf">Download</a></div>
+      <div class="doc"><span class="badge prep">In review</span><h3>AI &amp; Data Governance Statement</h3><p>Which models run where, zero-retention terms, human-in-the-loop controls.</p><a class="get" href="/trust/docs/audomate-ai-governance.pdf">Download</a></div>
+      <div class="doc"><span class="badge prep">In review</span><h3>Incident Response Summary</h3><p>Severity levels, escalation, client and regulator notification timelines.</p><a class="get" href="/trust/docs/audomate-incident-response.pdf">Download</a></div>
+      <div class="doc"><span class="badge prep">In review</span><h3>Retention &amp; Deletion Policy</h3><p>Data classes, retention periods, and how hard deletion actually executes.</p><a class="get" href="/trust/docs/audomate-retention.pdf">Download</a></div>
+      <div class="doc"><span class="badge prep">In review</span><h3>Business Continuity &amp; DR Summary</h3><p>Dual-region architecture, failover, RTO/RPO and degraded-mode behaviour.</p><a class="get" href="/trust/docs/audomate-bcp-dr.pdf">Download</a></div>
+      <div class="doc"><span class="badge req">On request</span><h3>Data Processing Agreement</h3><p>Processing terms, TOMs and subprocessor annexes — signed per deployment.</p><a class="get" href="mailto:sales@deeptech.pl?subject=DPA%20request">Request</a></div>
+      <div class="doc"><span class="badge req">On request</span><h3>DORA Vendor Due Diligence Pack</h3><p>Register-of-Information data, notification, audit-rights and exit terms.</p><a class="get" href="mailto:sales@deeptech.pl?subject=DORA%20vendor%20pack%20request">Request</a></div>
+      <div class="doc"><span class="badge req">Under NDA</span><h3>ROPA &amp; internal policies</h3><p>Record of processing activities and full internal security policies.</p><a class="get" href="mailto:sales@deeptech.pl?subject=NDA%20document%20request">Request</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="assessment">
+  <div class="wrap">
+    <div class="card">
+      <p class="secno">10 Vendor assessments</p>
+      <h2>Running due diligence on us? Send the questionnaire.</h2>
+      <p style="margin-top:14px;max-width:62ch;color:var(--muted)">We answer in your format, not ours — and we will tell you plainly where a control is planned rather than in place. Security questions and disclosures: <a href="mailto:sales@deeptech.pl">sales@deeptech.pl</a> <mark class="todo">TO CONFIRM: dedicated security@deeptech.pl alias</mark>.</p>
+      <a class="btn" href="mailto:sales@deeptech.pl?subject=Vendor%20assessment%20—%20Audomate">Contact the team</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="wordmark" style="font-size:17px">audomate<span>*</span></div>
+      <div style="margin-top:6px">AI-powered RegTech compliance — on EEA infrastructure.</div>
+      <div class="mono" style="margin-top:10px">DeepTech Sp. z o.o. · ul. Chmielna 132/134 · 00-805 Warsaw, Poland<br>KRS <mark class="todo">TO CONFIRM</mark> · NIP <mark class="todo">TO CONFIRM</mark></div>
+    </div>
+    <div class="mono">
+      <a href="https://audomate.eu">audomate.eu</a><br><br>
+      sales@deeptech.pl<br>+48 608 499 442<br><br>
+      Page last reviewed: <mark class="todo">set at launch</mark>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
