@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>Subprocessor List — Audomate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#101820;--muted:#57606a;--green:#00a868;--green-ink:#00794c;--line:#e2e7e6;--wash:#f5f7f6;--mono:'IBM Plex Mono',monospace;--sans:'IBM Plex Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}body{font-family:var(--sans);color:var(--ink);line-height:1.65;font-size:16px}
+a{color:var(--green-ink);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line)}header .wrap{display:flex;align-items:baseline;justify-content:space-between;padding:18px 24px;max-width:920px}
+.wm{font-weight:600;font-size:20px;letter-spacing:-.02em;color:var(--ink)}.wm span{color:var(--green)}
+.tag{font-family:var(--mono);font-size:13px;color:var(--muted)}
+main{padding:48px 0 80px}
+.banner{border:1px solid #e8c26a;background:#fff7e2;color:#7a5a10;font-size:14px;padding:12px 16px;margin-bottom:28px}
+h1{font-size:clamp(26px,4vw,34px);line-height:1.15;letter-spacing:-.02em;font-weight:600}
+.meta{font-family:var(--mono);font-size:13px;color:var(--muted);margin:10px 0 6px}
+h2{font-size:19px;font-weight:600;margin:36px 0 8px}
+p,li,td,th{color:#333b44}p{margin:12px 0}ul{margin:12px 0 12px 22px}li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px}
+th{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:left;padding:8px 12px 8px 0;border-bottom:1px solid var(--ink)}
+td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+mark{background:#fff3d6;color:#a06a12;font-family:var(--mono);font-size:.85em;padding:1px 5px;border-radius:3px}
+footer{border-top:1px solid var(--line);padding:24px 0 56px;color:var(--muted);font-size:13px}
+</style></head><body>
+<header><div class="wrap"><a class="wm" href="https://audomate.eu">audomate<span>*</span></a><span class="tag"><a href="/trust">Trust Center</a> · Documents</span></div></header>
+<main><div class="wrap">
+<div class="banner"><b>IN PROGRESS</b> — working draft published for transparency. Highlighted items are pending internal confirmation; this document is not yet formally adopted.</div>
+<h1>Subprocessor List</h1>
+<p class="meta">DeepTech Sp. z o.o. · Draft v0.9 · September 2026</p>
+<p>DeepTech Sp. z o.o. engages the following subprocessors to operate the Audomate platform. All subprocessors process data exclusively in EEA regions.</p>
+<table>
+<tr><th>Subprocessor</th><th>Purpose</th><th>Region</th><th>Data reached</th></tr>
+<tr><td>Google Cloud (Google Ireland Ltd <mark>entity to confirm on invoice</mark>)</td><td>Compute, storage, database, key management</td><td>EEA (BE / DE / NL)</td><td>Encrypted client content</td></tr>
+<tr><td>Microsoft Azure OpenAI Service <mark>contracting entity to confirm</mark></td><td>LLM inference — EEA endpoint, zero data retention, no training</td><td>EEA</td><td>Prompt/completion content, transient only</td></tr>
+<tr><td>Okta (Auth0) — EU region</td><td>Identity, SSO, MFA</td><td>EEA (eu.auth0.com)</td><td>Names, e-mail addresses, authentication logs</td></tr>
+<tr><td>Vercel</td><td>Frontend delivery via EEA edge PoPs</td><td>EEA PoPs</td><td>Transit only</td></tr>
+<tr><td><mark>Alerting / on-call tool — to confirm</mark></td><td>Incident alerting</td><td>—</td><td>Alert metadata only, no client content</td></tr>
+<tr><td><mark>Billing / invoicing tool — to confirm</mark></td><td>Billing</td><td>—</td><td>Billing contact details only</td></tr>
+<tr><td><mark>Support desk tool — to confirm</mark></td><td>Support ticketing</td><td>—</td><td>Contact details, ticket text</td></tr>
+</table>
+<h2>Change notice</h2>
+<p>We provide clients with 30 days' written notice before a subprocessor is added or replaced, with an objection window as defined in the Data Processing Agreement.</p>
+<h2>Not subprocessors</h2>
+<p>Self-hosted components running inside DeepTech's own cloud tenancy (PostgreSQL, Qdrant/pgvector, Redis, Celery workers) are part of the platform, not separate subprocessors.</p>
+</div></main>
+<footer><div class="wrap">DeepTech Sp. z o.o. · ul. Chmielna 132/134 · 00-805 Warsaw, Poland · KRS 0001127965 · NIP 5273130678 · Questions: <a href="mailto:security@deeptech.pl">security@deeptech.pl</a></div></footer>
+</body></html>
