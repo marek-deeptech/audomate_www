@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>Information Security Overview — Audomate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#101820;--muted:#57606a;--green:#00a868;--green-ink:#00794c;--line:#e2e7e6;--mono:'IBM Plex Mono',monospace;--sans:'IBM Plex Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}body{font-family:var(--sans);color:var(--ink);line-height:1.65;font-size:16px}
+a{color:var(--green-ink);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line)}header .wrap{display:flex;align-items:baseline;justify-content:space-between;padding:18px 24px;max-width:920px}
+.wm{font-weight:600;font-size:20px;letter-spacing:-.02em;color:var(--ink)}.wm span{color:var(--green)}
+.tag{font-family:var(--mono);font-size:13px;color:var(--muted)}
+main{padding:48px 0 80px}
+.banner{border:1px solid #e8c26a;background:#fff7e2;color:#7a5a10;font-size:14px;padding:12px 16px;margin-bottom:28px}
+h1{font-size:clamp(26px,4vw,34px);line-height:1.15;letter-spacing:-.02em;font-weight:600}
+.meta{font-family:var(--mono);font-size:13px;color:var(--muted);margin:10px 0 6px}
+h2{font-size:19px;font-weight:600;margin:36px 0 8px}
+p,li{color:#333b44}p{margin:12px 0}ul{margin:12px 0 12px 22px}li{margin:6px 0}
+mark{background:#fff3d6;color:#a06a12;font-family:var(--mono);font-size:.85em;padding:1px 5px;border-radius:3px}
+footer{border-top:1px solid var(--line);padding:24px 0 56px;color:var(--muted);font-size:13px}
+</style></head><body>
+<header><div class="wrap"><a class="wm" href="https://audomate.eu">audomate<span>*</span></a><span class="tag"><a href="/trust">Trust Center</a> · Documents</span></div></header>
+<main><div class="wrap">
+<div class="banner"><b>IN PROGRESS</b> — working draft published for transparency. Highlighted items are pending internal confirmation; this document is not yet formally adopted.</div>
+<h1>Information Security Overview</h1>
+<p class="meta">DeepTech Sp. z o.o. · Draft v0.9 · September 2026</p>
+<p>Public summary of the security controls protecting the Audomate platform, hosted on Google Cloud in EEA regions only.</p>
+<h2>1. Network security</h2>
+<ul>
+<li>TLS 1.3 on all external connections; TLS 1.2 enforced as minimum — no unencrypted channels.</li>
+<li>Mutual TLS (mTLS) between internal services via managed service mesh.</li>
+<li>Web Application Firewall in front of the API gateway — OWASP Top-10 protection, adaptive DDoS mitigation.</li>
+<li>Data layer (database, object storage, cache) on private networking with no public IP addresses.</li>
+</ul>
+<h2>2. Identity and access</h2>
+<ul>
+<li>SSO via SAML 2.0 / OIDC through an EU-region identity provider; integration with client IdPs (e.g. Microsoft Entra ID); MFA mandatory.</li>
+<li>Access tokens with 15-minute TTL and refresh-token rotation.</li>
+<li>Role-based access control at application level; database row-level security as an independent second enforcement layer — cross-tenant access is structurally impossible.</li>
+<li>Secrets in a managed vault with access auditing; rotation every 90 days.</li>
+</ul>
+<h2>3. Data protection</h2>
+<ul>
+<li>Encryption at rest: AES-256 across database (customer-managed keys via Cloud KMS), object storage and vector indexes; key rotation every 90 days with failure alerts.</li>
+<li>Point-in-time recovery on the primary database; object storage replicated dual-region within the EEA. RPO 1–4 h, RTO 4–8 h by plan tier.</li>
+<li>Hard deletion on request: a purge pipeline removes vector, relational and object-storage records.</li>
+</ul>
+<h2>4. AI-layer security</h2>
+<ul>
+<li>LLM inference on enterprise EEA endpoints under contractual zero-data-retention terms; no client content used for training.</li>
+<li>Prompt-injection detection and input sanitisation before any model call; per-tenant session isolation; per-tenant token budgets.</li>
+</ul>
+<h2>5. Logging and monitoring</h2>
+<ul>
+<li>Immutable, hash-chained audit log of every user action, AI verdict and human override.</li>
+<li>Centralised monitoring with error-rate and latency dashboards; syslog / REST forwarding to client SIEM available.</li>
+</ul>
+<h2>6. Incident management</h2>
+<p>Severity-based response with on-call escalation: critical incidents — tenant isolation, CTO/CEO escalation within 15 minutes, affected-client notification within 30 minutes (Enterprise) or 24 hours (Standard/Pro); personal-data breaches notified per GDPR art. 33 within 72 hours to the authority and within 24 hours to affected clients. See the Incident Response Summary.</p>
+<h2>7. Secure development</h2>
+<p><mark>Pending confirmation from engineering: code review policy, dependency and vulnerability scanning cadence, pre-release testing practice, critical-CVE patch SLA, personnel security training.</mark></p>
+<h2>8. Certifications</h2>
+<p>Hosting layer (Google Cloud): ISO 27001, SOC 2, CSA STAR — inherited infrastructure controls. DeepTech organisation: ISO 27001 in preparation (target: H1 2027); independent penetration test planned for Q1 2027 <mark>vendor selection in progress</mark>. Reports will be published in the Trust Center when complete.</p>
+</div></main>
+<footer><div class="wrap">DeepTech Sp. z o.o. · ul. Chmielna 132/134 · 00-805 Warsaw, Poland · KRS 0001127965 · NIP 5273130678 · Questions: <a href="mailto:security@deeptech.pl">security@deeptech.pl</a></div></footer>
+</body></html>
